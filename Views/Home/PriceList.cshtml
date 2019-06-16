@@ -1,0 +1,49 @@
+﻿@model IEnumerable<PriceClass>
+@{
+    ViewData["Title"] = "PriceList";
+    int i = 1;
+}
+
+<h3>@ViewData["Message"]</h3>
+
+<table class="table table-striped">
+    <tr>
+        <th scope="col">
+            #
+        </th>
+        <th scope="col">
+            Вид класс
+        </th>
+        <th scope="col">
+            Класс
+        </th>
+        <th scope="col">
+            Количество учеников
+        </th>
+        <th scope="col">
+            Date
+        </th>
+    </tr>
+    @foreach (var pf in Model)
+    {
+    <tr>
+        <td scope="row">
+            @i
+        </td>
+        <td>
+            @pf.ClassType
+        </td>
+        <td>
+            @pf.ClassLead
+        </td>
+        <td>
+            @pf.Count
+        </td>
+        <td>
+            @pf.Date
+        </td>
+    </tr>
+        i++;
+    }
+</table>
+

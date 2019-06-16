@@ -1,0 +1,46 @@
+﻿@model laba2.Models.PriceClass
+
+@{
+    ViewData["Title"] = "AddFuel";
+    //PriceFuels priceFuels = ViewBag.PriceFuels;
+}
+
+<h3>@ViewData["Message"]</h3>
+
+<div class="form-group">
+    @using (Html.BeginForm("AddFuel", "Home", FormMethod.Post))
+    {
+        @Html.Hidden("Date", Model.Date)
+        
+        <p>
+            @Html.LabelFor(m => m.Count, "количество учеников")<br />
+            @Html.EditorFor(m => m.Count, new { htmlAttributes = new { @class = "form-control" } })
+        </p>
+        <p>
+            @Html.LabelFor(m => m.ClassLead, "Класс ")<br />
+            @Html.EditorFor(m => m.ClassLead, new { htmlAttributes = new { @class = "form-control" } })
+        </p>
+        <p>
+            @Html.LabelFor(m => m.ClassTypeId, "Вид класса")<br />
+            @Html.DropDownList("ClassTypeId", ViewBag.TypeFuels as SelectList, new { @class = "form-control" })
+    </p>
+        <p>
+            <input type="submit" value="Отправить" class="btn btn-primary mb-2" />
+        </p>
+    }
+    @*@using (Html.BeginForm("AddFuel", "Home", FormMethod.Post))
+        {
+            @Html.Hidden("Date", DateTime.Now)
+            <p>
+                @Html.LabelFor(m => m.Type, "Вид топлива")<br />
+                @Html.DropDownList("Fuel", ViewBag.TypeFuels as SelectList, new { @class = "form-control" })
+            </p>
+            <p>
+                @Html.LabelFor(m => m.Price, "Цена")<br />
+                @Html.EditorFor(m => m.Price, new { htmlAttributes = new { @class = "form-control" } })
+            </p>
+            <p>
+                <input type="submit" value="Отправить" class="btn btn-primary mb-2" />
+            </p>
+        }*@
+</div>

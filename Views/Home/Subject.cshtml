@@ -1,0 +1,42 @@
+﻿@model List<Subject>
+@{
+    ViewData["Title"] = "Volumes";
+    int i = 1;
+}
+
+<h3>@ViewData["Message"]</h3>
+
+<table class="table table-striped">
+    <tr>
+        <th scope="col">
+            #
+        </th>
+        <th scope="col">
+            Name
+        </th>
+        <th scope="col">
+            Description
+        </th>
+        <th scope="col">
+            Teacher
+        </th>
+    </tr>
+    @foreach (var pf in Model)
+    {
+    <tr>
+        <td scope="row">
+            @i
+        </td>
+        <td>
+            @pf.Name
+        </td>
+        <td>
+            @pf.Description
+        </td>
+        <td>
+            @pf.Teacher
+        </td>
+    </tr>
+        i++;
+    }
+</table>
